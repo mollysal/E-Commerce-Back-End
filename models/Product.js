@@ -39,7 +39,7 @@ Product.init(
       type: DataTypes.INTERGER,
       // References the `Category` model's `id`.
       references: {
-        model: 'category',
+        model: 'Category',
         key: 'id'
       }
     }
