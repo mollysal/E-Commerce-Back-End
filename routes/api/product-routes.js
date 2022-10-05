@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   // be sure to include its associated Category and Tag data
   try {
     const productData = Product.findAll({
-      include: [{ model: Category}, { model: Tag }]
+      include: [{ model: Category}, { model: Tag, attributes: ['tag_name'], through: ProductTag, as: 'productTag_products'}]
     });
     res.status(200).json(productData);
   } catch (err) {
@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Category and Tag data
   try {
     const productData = Product.findByPk({
-      include: [{ model: Category}, { model: Tag }]
+      include: [{ model: Category}, { model: Tag, attributes: ['tag_name'], through: ProductTag, as: 'productTag_products'}]
     });
     if (!productData) {
       res.status(400).json({ message: 'No Product found with this id' });
