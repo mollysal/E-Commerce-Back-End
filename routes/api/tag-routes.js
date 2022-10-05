@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = Tag.findAll({
-      include: [{ model: Product }]
+      include: [{ model: Product, through: ProductTag, as: 'productTag_products'}]
     });
     res.status(200).json(tagData);
   } catch (err) {
@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = Tag.findByPk({
-      include: [{ model: Product }]
+      include: [{ model: Product, through: ProductTag, as: 'productTag_products' }]
     });
     if (!tagData) {
       res.status(400).json({ message: 'No Product found with this id' });
