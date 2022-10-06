@@ -4,8 +4,23 @@ Module 13 Object-Relational Mapping (ORM): E-Commerce Back End
 ---
 
 ## Contents
--[Description](#description)
+[Description](#description)
 
+[User Story](#user-story)
+
+[Acceptance Criteria](#acceptance-criteria)
+
+[Installation](#installation)
+
+[Usage](#usage)
+
+[Resources & Credit](#resourcescredit)
+
+[Features](#features)
+
+[Images](#images)
+
+---
 
 ## Description 
 Building the bakc end for an e-commerce site. Starter code has been prrovided. The goal is to configure a working Express.js API to use Sequelize to interact with a MySQL database.
@@ -33,19 +48,36 @@ THEN I am able to successfully create, update, and delete data in my database
 ```
 
 ## Installation
-
+```
+npm i
+```
 
 ## Usage
+```
+mysql -u root -p 
+```
+when prompted type in your MySQL password
+```
+source db/schema.sql
+exit
+npm run seed
+node server.js
+```
 
+Testing of the code was completed in Insomnia
 
 ## Resources/Credit
 * Starter Code Provided by UofM Bootcamp 
-* 
+* Learning Assistance
+* UofM Instructors & TA's
+* Bryan Borek
+* Ely 
+* Jeremiah Kendl 
 
 ## Features
 * Express.js
 * MySQL
 * Sequelize
 
-## Video
-![Gif Example]( link here )
+## Images
+![Insomnia Image](Assets/Insomnia%20Get%20Categories.png)
